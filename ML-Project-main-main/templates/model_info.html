@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}ML Pipeline | CardioSense AI{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="eyebrow floating"><i class="fa-solid fa-microchip"></i> Architectural Framework</span>
+            <h1 class="fw-bold mb-3">Predictive <span class="gradient-text">Engine Lifecycle</span></h1>
+            <p class="text-secondary">A transparent overview of the technical stages powering each risk assessment.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-10">
+                <div class="glass-card p-0 overflow-visible">
+                    <div class="p-4 p-lg-5">
+                        <div class="row g-5">
+                            <article class="col-md-6">
+                                <div class="d-flex align-items-start gap-4">
+                                    <div class="tile-icon flex-shrink-0 bg-accent text-white shadow-sm">1</div>
+                                    <div>
+                                        <h5 class="fw-bold">Ingestion & Validation</h5>
+                                        <p class="text-secondary">Dynamic loading of 70k+ clinical records. Automated
+                                            outlier detection filters invalid systolic/diastolic values to ensure
+                                            training high-fidelity.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-md-6">
+                                <div class="d-flex align-items-start gap-4">
+                                    <div class="tile-icon flex-shrink-0 bg-accent text-white shadow-sm">2</div>
+                                    <div>
+                                        <h5 class="fw-bold">Feature Engineering</h5>
+                                        <p class="text-secondary">Standardization of bio-metrics. Conversion of
+                                            chronological indicators and multi-dimensional scaling of laboratory
+                                            concentration levels.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-md-6">
+                                <div class="d-flex align-items-start gap-4">
+                                    <div class="tile-icon flex-shrink-0 bg-accent text-white shadow-sm">3</div>
+                                    <div>
+                                        <h5 class="fw-bold">Ensemble Training</h5>
+                                        <p class="text-secondary">Deployment of Scikit-Learn Random Forest ensembles.
+                                            Hyperparameter tuning via cross-validation to maximize predictive
+                                            sensitivity.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-md-6">
+                                <div class="d-flex align-items-start gap-4">
+                                    <div class="tile-icon flex-shrink-0 bg-accent text-white shadow-sm">4</div>
+                                    <div>
+                                        <h5 class="fw-bold">Inference Deployment</h5>
+                                        <p class="text-secondary">The validated model is serialized (Pickle) and exposed
+                                            via low-latency Flask API endpoints for real-time diagnostic screening.</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="{{ url_for('visuals') }}" class="btn btn-accent px-5 py-3">
+                        Review Performance Charts <i class="fa-solid fa-chart-line ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

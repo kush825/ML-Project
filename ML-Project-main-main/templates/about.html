@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}Dataset Schema | CardioSense AI{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="eyebrow floating"><i class="fa-solid fa-circle-info"></i> Dataset Architecture</span>
+            <h1 class="fw-bold mb-3">Clinical Input <span class="gradient-text">Schema</span></h1>
+            <p class="text-secondary">The underlying data framework used to train our cardiovascular forecasting
+                ensemble.</p>
+        </div>
+
+        <div class="glass-card p-4 p-lg-5">
+            <ul class="nav nav-pills nav-fill ui-pills mb-5" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-obj-tab" data-bs-toggle="pill" data-bs-target="#pills-obj"
+                        type="button">Objective Metrics</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-exam-tab" data-bs-toggle="pill" data-bs-target="#pills-exam"
+                        type="button">Examination Values</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-subj-tab" data-bs-toggle="pill" data-bs-target="#pills-subj"
+                        type="button">Lifestyle Indicators</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-obj">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="metric-card h-100">
+                                <i class="fa-solid fa-calendar text-accent mb-3 d-block fs-3"></i>
+                                <h6>Chronological Age</h6>
+                                <p class="small text-secondary mb-0">Captured in days and normalized for model
+                                    ingestion.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="metric-card h-100">
+                                <i class="fa-solid fa-ruler-vertical text-accent mb-3 d-block fs-3"></i>
+                                <h6>Stature</h6>
+                                <p class="small text-secondary mb-0">Patient height measured in centimeters (cm).</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="metric-card h-100">
+                                <i class="fa-solid fa-weight-scale text-accent mb-3 d-block fs-3"></i>
+                                <h6>Body Mass</h6>
+                                <p class="small text-secondary mb-0">Patient weight measured in kilograms (kg).</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="metric-card h-100">
+                                <i class="fa-solid fa-venus-mars text-accent mb-3 d-block fs-3"></i>
+                                <h6>Gender Identity</h6>
+                                <p class="small text-secondary mb-0">Categorical encoding of biological sex.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pills-exam">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="metric-card h-100 text-start">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="tile-icon m-0"><i class="fa-solid fa-heart-pulse"></i></div>
+                                    <h6 class="m-0">Systolic Pressure</h6>
+                                </div>
+                                <p class="text-secondary mb-0">Arterial pressure during heart contraction phase (ap_hi).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="metric-card h-100 text-start">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="tile-icon m-0"><i class="fa-solid fa-heart-crack"></i></div>
+                                    <h6 class="m-0">Diastolic Pressure</h6>
+                                </div>
+                                <p class="text-secondary mb-0">Arterial pressure between heart beats (ap_lo).</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="metric-card h-100 text-start">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="tile-icon m-0"><i class="fa-solid fa-vial"></i></div>
+                                    <h6 class="m-0">Cholesterol Profile</h6>
+                                </div>
+                                <p class="text-secondary mb-0">Categorical Level: 1 (Normal), 2 (Elevated), 3 (High).
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="metric-card h-100 text-start">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="tile-icon m-0"><i class="fa-solid fa-droplet"></i></div>
+                                    <h6 class="m-0">Glucose Concentration</h6>
+                                </div>
+                                <p class="text-secondary mb-0">Categorical Level: 1 (Normal), 2 (Elevated), 3 (High).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pills-subj">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="metric-card h-100">
+                                <i class="fa-solid fa-smoking text-accent mb-3 d-block fs-3"></i>
+                                <h6>Tobacco Usage</h6>
+                                <p class="small text-secondary mb-0">Binary indicator for active smoking habits.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="metric-card h-100">
+                                <i class="fa-solid fa-wine-glass text-accent mb-3 d-block fs-3"></i>
+                                <h6>Alcohol Intake</h6>
+                                <p class="small text-secondary mb-0">Binary indicator for regular alcohol consumption.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="metric-card h-100">
+                                <i class="fa-solid fa-person-running text-accent mb-3 d-block fs-3"></i>
+                                <h6>Physical Activity</h6>
+                                <p class="small text-secondary mb-0">Binary indicator for regular physical exercise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
