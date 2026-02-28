@@ -426,3 +426,26 @@ body {
         padding-top: 80px;
     }
 }
+
+/* Result Icons */
+.result-icon-safe {
+    font-size: 5rem !important;
+    color: #00ff88;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.4));
+}
+
+.result-icon-danger {
+    font-size: 5rem !important;
+    color: #ff4d4d;
+    filter: drop-shadow(0 0 20px rgba(255, 77, 77, 0.4));
+}
+
+#riskScore {
+    font-variant-numeric: tabular-nums;
+}
+
+#scoreContainer {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    margin-top: 15px;
+}
