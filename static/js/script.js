@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const iconContainer = document.getElementById('iconContainer');
     const resultTitle = document.getElementById('resultTitle');
     const resultMessage = document.getElementById('resultMessage');
+    const riskScore = document.getElementById('riskScore');
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -64,20 +65,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function showResult(data) {
-        // Clear previous icon
-        iconContainer.innerHTML = '';
-        
+        // Update score
+        riskScore.textContent = data.probability;
         if (data.prediction === 1) {
             // Risk
             iconContainer.innerHTML = '<i class="fa-solid fa-heart-crack result-icon-danger"></i>';
             resultTitle.textContent = 'High Risk Detected';
             resultTitle.className = 'fw-bold mb-2 text-danger';
+            riskScore.className = 'h1 fw-bold mb-0 text-danger';
             resultMessage.textContent = 'The model predicts a high probability of cardiovascular disease based on the provided metrics. Please consult a cardiologist.';
         } else {
             // Healthy
             iconContainer.innerHTML = '<i class="fa-solid fa-heart-circle-check result-icon-safe"></i>';
             resultTitle.textContent = 'Health Metrics Look Good';
             resultTitle.className = 'fw-bold mb-2 text-success';
+            riskScore.className = 'h1 fw-bold mb-0 text-success';
             resultMessage.textContent = 'The model predicts a low risk of cardiovascular disease. Keep up the healthy lifestyle!';
         }
     }
